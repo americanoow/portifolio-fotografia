@@ -1,49 +1,51 @@
-/* PERFESTUDIO · Terracota Editorial em versão portfólio: fotos em destaque,
+/* PERFESTUDIO · Edição de Natal sobre o layout Terracota Editorial: fotos em destaque,
    tipografia maior e alternância entre seções claras e escuras.
    Todas as cores ficam centralizadas em :root. */
 :root {
-  --paper: #E4D8CA;
-  --paper-light: #EEE6DC;
-  --cream: #F6F0E8;
-  --card: #FFFCF8;
-  --alternate: #D1C0AE;
-  --ink: #302923;
-  --ink-soft: #3E3530;
-  --clay: #AA755A;
-  --cocoa: #58463B;
-  --white: #F4EDE5;
-  --on-dark: #F4EDE5;
+  --paper: #F1EADD;
+  --paper-light: #F8F3E9;
+  --cream: #FBF8F1;
+  --card: #FFFDF8;
+  --alternate: #DCD3BF;
+  --ink: #16261D;
+  --ink-soft: #24382C;
+  --clay: #B3263A;
+  --cocoa: #1E4D39;
+  --white: #FBF5EA;
+  --on-dark: #FBF5EA;
   /* Variações de contraste para textos pequenos, títulos grandes e botões. */
-  --muted: #594B40;
-  --clay-text: #70432E;
-  --clay-display: #965F45;
-  --clay-button: #85553E;
-  --clay-dark: #70432E;
-  --clay-light: #D5A88B;
-  --muted-on-dark: #DED0C2;
-  --line: #B49E88;
-  --line-soft: #D6C6B4;
-  --line-dark: #927A68;
-  --sage: #56664A;
-  --sage-light: #C6D0B5;
-  --check-bg: #56664A1F;
-  --check-bg-dark: #C6D0B52E;
-  --gift: #E6D7C6;
-  --gift-dark: #695244;
-  --shadow-photo: #3029233D;
-  --shadow-deep: #1A15126B;
-  --shadow-clay: #85553E59;
-  --glow-clay: #AA755A40;
-  --shade: #30292373;
-  --overlay-ink: #302923DB;
-  --backdrop: #302923B3;
-  --lightbox-backdrop: #1C1714F2;
-  --header-bg: #E4D8CAE6;
+  --muted: #44503F;
+  --clay-text: #8E1B2E;
+  --clay-display: #A82337;
+  --clay-button: #A3202F;
+  --clay-dark: #7E1624;
+  --clay-light: #E6C27A;
+  --muted-on-dark: #DCE3D6;
+  --line: #B5A98C;
+  --line-soft: #DDD3BD;
+  --line-dark: #5F8671;
+  --sage: #2E6B49;
+  --sage-light: #BFDDC6;
+  --check-bg: #2E6B491F;
+  --check-bg-dark: #BFDDC62E;
+  --gift: #F3E5C4;
+  --gift-dark: #2F6A50;
+  --shadow-photo: #16261D3D;
+  --shadow-deep: #0B150F6B;
+  --shadow-clay: #A3202F59;
+  --glow-clay: #B3263A2E;
+  --shade: #16261D73;
+  --overlay-ink: #16261DDB;
+  --backdrop: #16261DB3;
+  --lightbox-backdrop: #0F1A14F2;
+  --header-bg: #F1EADDE6;
+  --xmas-red: #8F1C2B;
+  --snow: #FFFFFF;
   --like: #C23B4E;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'DM Sans', Arial, sans-serif;
   /* Ícones usados como máscara: a cor vem do background de cada elemento. */
-  --spark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2c0 7-3 10-10 10 7 0 10 3 10 10 0-7 3-10 10-10-7 0-10-3-10-10Z'/%3E%3C/svg%3E");
+  --flake: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7M9.5 3.5l2.5 2 2.5-2M9.5 20.5l2.5-2 2.5 2'/%3E%3C/svg%3E");
   --check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4.5 12.5 4.8 4.8L19.5 7'/%3E%3C/svg%3E");}
 
 /* Base */
@@ -51,6 +53,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 body.modal-open { overflow: hidden; }
+::selection { background: var(--clay-light); color: var(--ink); }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; cursor: pointer; }
 button, a, summary { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
@@ -87,7 +90,7 @@ em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var
 .text-button[hidden] { display: none; }
 
 /* Faixa superior e cabeçalho fixo */
-.top-note { padding: 9px 16px; background: var(--ink); color: var(--muted-on-dark); font-size: 12px; letter-spacing: .08em; text-align: center; }
+.top-note { padding: 9px 16px; background: var(--xmas-red); color: var(--on-dark); font-size: 12px; letter-spacing: .08em; text-align: center; }
 .site-header { position: sticky; top: 0; z-index: 40; background: var(--header-bg); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid transparent; transition: border-color .3s, box-shadow .3s; }
 .site-header.is-scrolled { border-color: var(--line-soft); box-shadow: 0 12px 30px -20px var(--shadow-photo); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; min-height: 84px; }
@@ -172,7 +175,7 @@ h1 em { display: inline-block; }
 .values-strip:hover .marquee { animation-play-state: paused; }
 .marquee-group { display: flex; align-items: center; }
 .marquee-group span { display: flex; align-items: center; font-family: var(--serif); font-size: 26px; font-style: italic; white-space: nowrap; }
-.marquee-group span::after { content: ""; width: 14px; height: 14px; margin-inline: 40px; background: var(--clay-light); -webkit-mask: var(--spark) center / contain no-repeat; mask: var(--spark) center / contain no-repeat; }
+.marquee-group span::after { content: ""; width: 18px; height: 18px; margin-inline: 40px; background: var(--clay-light); -webkit-mask: var(--flake) center / contain no-repeat; mask: var(--flake) center / contain no-repeat; }
 
 /* Portfólio */
 .portfolio-section { padding-block: clamp(76px, 9vw, 128px); background: var(--cream); }
@@ -431,6 +434,47 @@ tbody a { font-weight: 600; color: var(--clay-text); text-decoration: underline;
 .lightbox-counter { min-width: 70px; font-size: 14px; letter-spacing: .14em; text-align: center; color: var(--muted-on-dark); }
 .lightbox :focus-visible { outline-color: var(--clay-light); }
 
+/* ===== Tema natalino ===== (decorações em bloco único: ao encerrar a campanha, apague-o junto com os elementos .snow, .ornaments, .xmas-badge e .holly do HTML) */
+/* Luzinhas penduradas no cabeçalho: duas camadas que piscam em alternância. */
+.site-header::before, .site-header::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; z-index: 1; height: 24px; background: url("assets/lights-a.svg") repeat-x left top / 96px 24px; pointer-events: none; animation: twinkle 2.6s ease-in-out infinite; }
+.site-header::after { background-image: url("assets/lights-b.svg"); animation-delay: -1.3s; }
+@keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+
+/* Bengala doce nas bordas da faixa de valores. */
+.values-strip { position: relative; }
+.values-strip::before, .values-strip::after { content: ""; position: absolute; left: 0; right: 0; height: 6px; background: repeating-linear-gradient(135deg, var(--clay) 0 10px, var(--on-dark) 10px 20px); }
+.values-strip::before { top: 0; }
+.values-strip::after { bottom: 0; }
+
+/* Neve: flocos criados pelo script dentro de cada [data-snow]. */
+.snow { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; container-type: size; }
+.snow i { position: absolute; top: -14px; left: var(--x); width: var(--s); height: var(--s); border-radius: 50%; background: var(--snow); opacity: var(--o); animation: snowfall var(--d) linear var(--dl) infinite; will-change: transform; }
+.snow.is-idle i { animation-play-state: paused; }
+.hero .snow i { box-shadow: 0 0 0 1px #1E4D3918, 0 2px 6px #1E4D3924; }
+.contact-section .container { position: relative; }
+@keyframes snowfall { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(var(--drift), 110vh, 0); } }
+@supports (height: 1cqh) {
+  @keyframes snowfall { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(var(--drift), calc(100cqh + 28px), 0); } }
+}
+
+/* Selo de Natal sobre a foto principal e azevinho no canto. */
+.xmas-badge { position: absolute; top: -18px; right: -14px; z-index: 3; display: grid; place-content: center; width: 112px; height: 112px; padding: 8px; border-radius: 50%; background: radial-gradient(circle at 32% 26%, #CF3B4E 0%, var(--clay) 45%, var(--xmas-red) 100%); color: var(--on-dark); text-align: center; box-shadow: 0 18px 34px -14px var(--shadow-clay), inset 0 0 0 4px #FBF5EA26; rotate: 9deg; animation: badge-float 5s ease-in-out infinite; transition: scale .3s; }
+.xmas-badge::before { content: ""; position: absolute; inset: 7px; border: 1.5px dashed var(--clay-light); border-radius: 50%; }
+.xmas-badge:hover { scale: 1.06; }
+.xmas-badge:focus-visible { outline-color: var(--clay-light); }
+.xmas-badge .icon { width: 20px; height: 20px; margin: 0 auto 2px; color: var(--clay-light); }
+.xmas-badge small { font-size: 9.5px; font-weight: 600; letter-spacing: .2em; line-height: 1.2; text-transform: uppercase; color: var(--clay-light); }
+.xmas-badge strong { font-family: var(--serif); font-size: 27px; font-style: italic; font-weight: 600; line-height: 1; }
+.holly { position: absolute; left: -30px; top: 22px; z-index: 3; width: 104px; height: auto; rotate: -32deg; pointer-events: none; filter: drop-shadow(0 8px 10px var(--shadow-photo)); }
+@keyframes badge-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -7px; } }
+
+/* Bolas penduradas na seção de temporada. */
+.ornaments { position: absolute; top: 0; left: 0; right: 0; z-index: 1; height: 0; pointer-events: none; }
+.ornament { position: absolute; top: 0; left: var(--x); width: var(--s); transform-origin: 50% 0; animation: sway var(--t, 5s) ease-in-out var(--dl, 0s) infinite alternate; }
+.ornament::before { content: ""; display: block; width: 12px; height: var(--len); margin: 0 auto -3px; background: linear-gradient(var(--clay-light), var(--clay-light)) center top / 1px calc(100% - 7px) no-repeat, linear-gradient(var(--clay-light), var(--clay-light)) center bottom / 12px 7px no-repeat; }
+.ornament::after { content: ""; display: block; width: var(--s); height: var(--s); border-radius: 50%; background: radial-gradient(circle at 32% 26%, #FFFFFFB3 0 5%, #FFFFFF2E 16%, transparent 34%), var(--c); box-shadow: inset -7px -9px 16px #00000059, 0 16px 24px -12px #000000A6; }
+@keyframes sway { from { rotate: -5deg; } to { rotate: 5deg; } }
+
 /* Animações */
 @keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
 @keyframes slow-zoom { from { transform: scale(1.07); } to { transform: scale(1); } }
@@ -491,6 +535,12 @@ tbody a { font-weight: 600; color: var(--clay-text); text-decoration: underline;
   .container { width: calc(100% - 40px); }
   .top-note { padding-block: 8px; font-size: 11px; letter-spacing: .04em; }
   .pb-logo-mark { height: 46px; }
+  .xmas-badge { top: -12px; right: -6px; width: 88px; height: 88px; }
+  .xmas-badge small { font-size: 8px; }
+  .xmas-badge strong { font-size: 22px; }
+  .xmas-badge .icon { width: 16px; height: 16px; }
+  .holly { left: -14px; top: 14px; width: 78px; }
+  .ornament { scale: .72; }
   .pb-logo-footer { height: 72px; }
   .footer-links { justify-content: center; }
   .eyebrow { font-size: 11px; letter-spacing: .18em; }
@@ -503,7 +553,7 @@ tbody a { font-weight: 600; color: var(--clay-text); text-decoration: underline;
   .starting-at strong { font-size: 30px; }
   .values-strip { padding-block: 16px; }
   .marquee-group span { font-size: 21px; }
-  .marquee-group span::after { width: 12px; height: 12px; margin-inline: 26px; }
+  .marquee-group span::after { width: 15px; height: 15px; margin-inline: 26px; }
   .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding-bottom: 0; }
   .gallery .shot-card:first-child { grid-column: 1 / -1; }
   .gallery .shot-card:first-child .shot { aspect-ratio: 1; }

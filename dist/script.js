@@ -360,3 +360,29 @@ function initializeFeed() {
   });
 }
 initializeFeed();
+
+// Neve natalina: flocos leves em CSS dentro de cada [data-snow]. Pausa fora da tela e some com prefers-reduced-motion.
+function initializeSnow() {
+  const areas = [...document.querySelectorAll('[data-snow]')];
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!areas.length || motion.matches) return;
+  const total = window.innerWidth < 640 ? 18 : 36;
+  const between = (min, max) => (min + Math.random() * (max - min)).toFixed(2);
+  const observer = 'IntersectionObserver' in window
+    ? new IntersectionObserver((entries) => entries.forEach((entry) => entry.target.classList.toggle('is-idle', !entry.isIntersecting)))
+    : null;
+  areas.forEach((area) => {
+    const flakes = document.createDocumentFragment();
+    for (let i = 0; i < total; i++) {
+      const flake = document.createElement('i');
+      flake.style.cssText = `--x:${between(0, 100)}%;--s:${between(3, 8)}px;--o:${between(0.45, 0.9)};--d:${between(9, 18)}s;--dl:-${between(0, 18)}s;--drift:${between(-60, 60)}px`;
+      flakes.append(flake);
+    }
+    area.append(flakes);
+    observer?.observe(area);
+  });
+  motion.addEventListener('change', (event) => {
+    if (event.matches) areas.forEach((area) => area.replaceChildren());
+  });
+}
+initializeSnow();

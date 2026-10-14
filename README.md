@@ -56,6 +56,17 @@ O perfil `@pebestudiofotografico` está linkado no feed, na chamada final, no ro
 
 As curtidas, os comentários, as legendas e as datas foram copiados do Instagram em 08/10/2026 e estão fixos no HTML (`data-likes` e o texto "Ver o comentário"). Para atualizar, edite esses valores. Para trocar uma publicação, altere `data-post`, `data-url`, os links, o `alt` e a foto `assets/feed-N.jpg`. As fotos atuais são as miniaturas de 640 px que o Instagram entrega, e duas delas vêm com recorte quadrado automático; para mais qualidade, substitua os arquivos `feed-N.jpg` por originais quadrados (1080 px).
 
+## Tema natalino
+
+O site está na edição de Natal. A paleta (verde-pinheiro, cranberry e dourado) está nos tokens de `:root` em `dist/styles.css`, e o logo e o favicon foram recoloridos para combinar. As decorações ficam no bloco "Tema natalino" do CSS:
+
+- Luzinhas piscando no cabeçalho (`dist/assets/lights-a.svg` e `lights-b.svg`) e bengala doce nas bordas da faixa de valores.
+- Neve nas seções inicial, de temporada e final: o `initializeSnow()` em `dist/script.js` cria os flocos dentro dos elementos `[data-snow]`. Ela pausa fora da tela e não aparece com `prefers-reduced-motion`.
+- Selo "Edição de Natal" e azevinho sobre a foto principal, e bolas penduradas na seção de temporada.
+- Textos natalinos na faixa superior, no marquee, na seção de temporada, na chamada final e no rodapé.
+
+Para encerrar a campanha, apague o bloco "Tema natalino" do CSS, os elementos `.snow`, `.ornaments`, `.xmas-badge` e `.holly` do HTML, e volte os textos e as cores de `:root` (o `git` guarda a versão anterior).
+
 ## Validação e publicação
 
 O projeto permanece em HTML/CSS/JavaScript e não tem etapa de build; `dist/` já é a saída estática. Use `npm run check` para verificar os scripts e `npm run dev` para revisar em um navegador. Esta atualização é local; não publicar nem alterar configurações de produção sem aprovação do proprietário.
